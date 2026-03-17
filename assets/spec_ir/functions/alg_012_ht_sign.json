@@ -1,0 +1,60 @@
+{
+  "function_id": "alg_012_ht_sign",
+  "name": "ht_sign(M, SK.seed, PK.seed, idx_tree, idx_leaf)",
+  "label": "Algorithm 12",
+  "page_start": 27,
+  "page_end": 27,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "n-byte message to sign"
+    },
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed from SLH-DSA private key"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "idx_tree",
+      "type": "int",
+      "description": "Index of the XMSS tree at layer 0 to use for signing"
+    },
+    {
+      "name": "idx_leaf",
+      "type": "int",
+      "description": "Index of the WOTS+ key within the layer 0 XMSS tree to use for signing"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SIG_HT",
+      "type": "byte_array",
+      "description": "(h + d * len) * n-byte hypertree signature, sequence of d XMSS signatures"
+    }
+  ],
+  "body_raw": [
+    "ADRS ← toByte(0, 32)",
+    "ADRS.setTreeAddress(idx_tree)",
+    "SIG_tmp ← xmss_sign(M, SK.seed, idx_leaf, PK.seed, ADRS)",
+    "SIG_HT ← SIG_tmp",
+    "root ← xmss_pkFromSig(idx_leaf, SIG_tmp, M, PK.seed, ADRS)",
+    "for j from 1 to d - 1 do",
+    "  idx_leaf ← idx_tree mod 2^h'",
+    "  idx_tree ← idx_tree ≫ h'",
+    "  ADRS.setLayerAddress(j)",
+    "  ADRS.setTreeAddress(idx_tree)",
+    "  SIG_tmp ← xmss_sign(root, SK.seed, idx_leaf, PK.seed, ADRS)",
+    "  SIG_HT ← SIG_HT ∥ SIG_tmp",
+    "  if j < d - 1 then",
+    "    root ← xmss_pkFromSig(idx_leaf, SIG_tmp, root, PK.seed, ADRS)",
+    "  end if",
+    "end for",
+    "return SIG_HT"
+  ]
+}

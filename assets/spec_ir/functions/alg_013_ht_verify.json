@@ -1,0 +1,65 @@
+{
+  "function_id": "alg_013_ht_verify",
+  "name": "ht_verify(M, SIG_HT, PK.seed, idx_tree, idx_leaf, PK.root)",
+  "label": "Algorithm 13",
+  "page_start": 28,
+  "page_end": 28,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "n-byte message that was signed"
+    },
+    {
+      "name": "SIG_HT",
+      "type": "byte_array",
+      "description": "(h + d * len) * n-byte hypertree signature"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "idx_tree",
+      "type": "int",
+      "description": "Index of the XMSS tree at layer 0 that was used for signing"
+    },
+    {
+      "name": "idx_leaf",
+      "type": "int",
+      "description": "Index of the WOTS+ key within the layer 0 XMSS tree that was used for signing"
+    },
+    {
+      "name": "PK.root",
+      "type": "byte_array",
+      "description": "n-byte root of the top layer XMSS tree, from SLH-DSA public key"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": "boolean",
+      "description": "true if the signature is valid, false otherwise"
+    }
+  ],
+  "body_raw": [
+    "ADRS ← toByte(0, 32)",
+    "ADRS.setTreeAddress(idx_tree)",
+    "SIG_tmp ← SIG_HT.getXMSSSignature(0)",
+    "node ← xmss_pkFromSig(idx_leaf, SIG_tmp, M, PK.seed, ADRS)",
+    "for j from 1 to d - 1 do",
+    "  idx_leaf ← idx_tree mod 2^h'",
+    "  idx_tree ← idx_tree ≫ h'",
+    "  ADRS.setLayerAddress(j)",
+    "  ADRS.setTreeAddress(idx_tree)",
+    "  SIG_tmp ← SIG_HT.getXMSSSignature(j)",
+    "  node ← xmss_pkFromSig(idx_leaf, SIG_tmp, node, PK.seed, ADRS)",
+    "end for",
+    "if node = PK.root then",
+    "  return true",
+    "else",
+    "  return false",
+    "end if"
+  ]
+}

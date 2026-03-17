@@ -1,0 +1,52 @@
+{
+  "function_id": "alg_010_xmss_sign",
+  "name": "xmss_sign(M, SK.seed, idx, PK.seed, ADRS)",
+  "label": "Algorithm 10",
+  "page_start": 24,
+  "page_end": 24,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "n-byte message to sign"
+    },
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed from SLH-DSA private key"
+    },
+    {
+      "name": "idx",
+      "type": "int",
+      "description": "Index of the WOTS+ key within the XMSS tree to use for signing"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "ADRS",
+      "type": "byte_array",
+      "description": "32-byte address structure with layer and tree addresses set to the target XMSS tree"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SIG_XMSS",
+      "type": "byte_array",
+      "description": "(len + h') * n-byte XMSS signature, consisting of WOTS+ signature followed by authentication path"
+    }
+  ],
+  "body_raw": [
+    "for j from 0 to h' - 1 do",
+    "  k ← ⌊idx / 2^j⌋ ⊕ 1",
+    "  AUTH[j] ← xmss_node(SK.seed, k, j, PK.seed, ADRS)",
+    "end for",
+    "ADRS.setTypeAndClear(WOTS_HASH)",
+    "ADRS.setKeyPairAddress(idx)",
+    "sig ← wots_sign(M, SK.seed, PK.seed, ADRS)",
+    "SIG_XMSS ← sig ∥ AUTH",
+    "return SIG_XMSS"
+  ]
+}

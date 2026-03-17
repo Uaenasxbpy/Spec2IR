@@ -1,0 +1,43 @@
+{
+  "function_id": "alg_024_slh_verify",
+  "name": "slh_verify(M, SIG, ctx, PK)",
+  "label": "Algorithm 24",
+  "page_start": 41,
+  "page_end": 41,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "Message to verify"
+    },
+    {
+      "name": "SIG",
+      "type": "byte_array",
+      "description": "SLH-DSA signature to verify"
+    },
+    {
+      "name": "ctx",
+      "type": "byte_array",
+      "description": "Context string, maximum length 255 bytes"
+    },
+    {
+      "name": "PK",
+      "type": "byte_array",
+      "description": "SLH-DSA public key"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": "boolean",
+      "description": "true if the signature is valid, false otherwise"
+    }
+  ],
+  "body_raw": [
+    "if |ctx| > 255 then",
+    "  return false",
+    "end if",
+    "M' ← toByte(0, 1) ∥ toByte(|ctx|, 1) ∥ ctx ∥ M",
+    "return slh_verify_internal(M', SIG, PK)"
+  ]
+}

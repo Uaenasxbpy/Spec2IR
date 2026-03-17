@@ -1,0 +1,56 @@
+{
+  "function_id": "alg_015_fors_node",
+  "name": "fors_node(SK.seed, i, z, PK.seed, ADRS)",
+  "label": "Algorithm 15",
+  "page_start": 30,
+  "page_end": 30,
+  "inputs": [
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed from SLH-DSA private key"
+    },
+    {
+      "name": "i",
+      "type": "int",
+      "description": "Index of the target node within its height level, i < k * 2^(a - z)"
+    },
+    {
+      "name": "z",
+      "type": "int",
+      "description": "Height of the target node within the FORS tree, z ≤ a"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "ADRS",
+      "type": "byte_array",
+      "description": "32-byte address structure, type set to FORS_TREE with layer=0, tree address, and key pair address set"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "node",
+      "type": "byte_array",
+      "description": "n-byte root of the Merkle subtree rooted at node (i, z)"
+    }
+  ],
+  "body_raw": [
+    "if z = 0 then",
+    "  sk ← fors_skGen(SK.seed, PK.seed, ADRS, i)",
+    "  ADRS.setTreeHeight(0)",
+    "  ADRS.setTreeIndex(i)",
+    "  node ← F(PK.seed, ADRS, sk)",
+    "else",
+    "  lnode ← fors_node(SK.seed, 2 * i, z - 1, PK.seed, ADRS)",
+    "  rnode ← fors_node(SK.seed, 2 * i + 1, z - 1, PK.seed, ADRS)",
+    "  ADRS.setTreeHeight(z)",
+    "  ADRS.setTreeIndex(i)",
+    "  node ← H(PK.seed, ADRS, lnode ∥ rnode)",
+    "end if",
+    "return node"
+  ]
+}

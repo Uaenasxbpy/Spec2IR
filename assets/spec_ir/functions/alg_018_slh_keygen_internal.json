@@ -1,0 +1,42 @@
+{
+  "function_id": "alg_018_slh_keygen_internal",
+  "name": "slh_keygen_internal(SK.seed, SK.prf, PK.seed)",
+  "label": "Algorithm 18",
+  "page_start": 34,
+  "page_end": 34,
+  "inputs": [
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed for generating WOTS+ and FORS private keys"
+    },
+    {
+      "name": "SK.prf",
+      "type": "byte_array",
+      "description": "n-byte secret PRF key for generating message randomizers"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed for domain separation"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SK",
+      "type": "byte_array",
+      "description": "4n-byte SLH-DSA private key: (SK.seed, SK.prf, PK.seed, PK.root)"
+    },
+    {
+      "name": "PK",
+      "type": "byte_array",
+      "description": "2n-byte SLH-DSA public key: (PK.seed, PK.root)"
+    }
+  ],
+  "body_raw": [
+    "ADRS ← toByte(0, 32)",
+    "ADRS.setLayerAddress(d - 1)",
+    "PK.root ← xmss_node(SK.seed, 0, h', PK.seed, ADRS)",
+    "return ((SK.seed, SK.prf, PK.seed, PK.root), (PK.seed, PK.root))"
+  ]
+}

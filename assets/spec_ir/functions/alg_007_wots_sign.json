@@ -1,0 +1,55 @@
+{
+  "function_id": "alg_007_wots_sign",
+  "name": "wots_sign(M, SK.seed, PK.seed, ADRS)",
+  "label": "Algorithm 7",
+  "page_start": 20,
+  "page_end": 20,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "n-byte message to sign"
+    },
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed from SLH-DSA private key"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "ADRS",
+      "type": "byte_array",
+      "description": "32-byte address structure, type set to WOTS_HASH with layer, tree, and key pair addresses set"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "sig",
+      "type": "byte_array",
+      "description": "len * n-byte WOTS+ signature, array of len n-byte chain values"
+    }
+  ],
+  "body_raw": [
+    "csum ← 0",
+    "msg ← base_2b(M, lgw, len1)",
+    "for i from 0 to len1 - 1 do",
+    "  csum ← csum + w - 1 - msg[i]",
+    "end for",
+    "csum ← csum ≪ ((8 - ((len2 * lgw) mod 8)) mod 8)",
+    "msg ← msg ∥ base_2b(toByte(csum, ⌈len2 * lgw / 8⌉), lgw, len2)",
+    "skADRS ← ADRS",
+    "skADRS.setTypeAndClear(WOTS_PRF)",
+    "skADRS.setKeyPairAddress(ADRS.getKeyPairAddress())",
+    "for i from 0 to len - 1 do",
+    "  skADRS.setChainAddress(i)",
+    "  sk ← PRF(PK.seed, SK.seed, skADRS)",
+    "  ADRS.setChainAddress(i)",
+    "  sig[i] ← chain(sk, 0, msg[i], PK.seed, ADRS)",
+    "end for",
+    "return sig"
+  ]
+}

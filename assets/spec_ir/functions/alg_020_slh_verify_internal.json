@@ -1,0 +1,51 @@
+{
+  "function_id": "alg_020_slh_verify_internal",
+  "name": "slh_verify_internal(M, SIG, PK)",
+  "label": "Algorithm 20",
+  "page_start": 36,
+  "page_end": 36,
+  "inputs": [
+    {
+      "name": "M",
+      "type": "byte_array",
+      "description": "Message to verify"
+    },
+    {
+      "name": "SIG",
+      "type": "byte_array",
+      "description": "SLH-DSA signature to verify"
+    },
+    {
+      "name": "PK",
+      "type": "byte_array",
+      "description": "SLH-DSA public key: (PK.seed, PK.root)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": "boolean",
+      "description": "true if the signature is valid, false otherwise"
+    }
+  ],
+  "body_raw": [
+    "if |SIG| ≠ (1 + k*(1 + a) + h + d * len) * n then",
+    "  return false",
+    "end if",
+    "ADRS ← toByte(0, 32)",
+    "R ← SIG.getR()",
+    "SIG_FORS ← SIG.getSIG_FORS()",
+    "SIG_HT ← SIG.getSIG_HT()",
+    "digest ← H_msg(R, PK.seed, PK.root, M)",
+    "md ← digest[0 : ⌈k * a / 8⌉]",
+    "tmp_idxtree ← digest[⌈k * a / 8⌉ : ⌈k * a / 8⌉ + ⌈(h - h'/d) / 8⌉]",
+    "tmp_idxleaf ← digest[⌈k * a / 8⌉ + ⌈(h - h'/d) / 8⌉ : ⌈k * a / 8⌉ + ⌈(h - h'/d) / 8⌉ + ⌈h/(8d)⌉]",
+    "idxtree ← toInt(tmp_idxtree, ⌈(h - h'/d) / 8⌉) mod 2^(h - h'/d)",
+    "idxleaf ← toInt(tmp_idxleaf, ⌈h/(8d)⌉) mod 2^(h/d)",
+    "ADRS.setTreeAddress(idxtree)",
+    "ADRS.setTypeAndClear(FORS_TREE)",
+    "ADRS.setKeyPairAddress(idxleaf)",
+    "PK_FORS ← fors_pkFromSig(SIG_FORS, md, PK.seed, ADRS)",
+    "return ht_verify(PK_FORS, SIG_HT, PK.seed, idxtree, idxleaf, PK.root)"
+  ]
+}

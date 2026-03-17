@@ -1,0 +1,49 @@
+{
+  "function_id": "alg_016_fors_sign",
+  "name": "fors_sign(md, SK.seed, PK.seed, ADRS)",
+  "label": "Algorithm 16",
+  "page_start": 31,
+  "page_end": 31,
+  "inputs": [
+    {
+      "name": "md",
+      "type": "byte_array",
+      "description": "⌈k * a / 8⌉-byte message digest to sign"
+    },
+    {
+      "name": "SK.seed",
+      "type": "byte_array",
+      "description": "n-byte secret seed from SLH-DSA private key"
+    },
+    {
+      "name": "PK.seed",
+      "type": "byte_array",
+      "description": "n-byte public seed from SLH-DSA public key"
+    },
+    {
+      "name": "ADRS",
+      "type": "byte_array",
+      "description": "32-byte address structure, type set to FORS_TREE with layer=0, tree address, and key pair address set"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SIG_FORS",
+      "type": "byte_array",
+      "description": "k * (a + 1) * n-byte FORS signature"
+    }
+  ],
+  "body_raw": [
+    "SIG_FORS = NULL",
+    "indices ← base_2b(md, a, k)",
+    "for i from 0 to k - 1 do",
+    "  SIG_FORS ← SIG_FORS ∥ fors_skGen(SK.seed, PK.seed, ADRS, i * 2^a + indices[i])",
+    "  for j from 0 to a - 1 do",
+    "    s ← ⌊indices[i] / 2^j⌋ ⊕ 1",
+    "    AUTH[j] ← fors_node(SK.seed, i * 2^(a - j) + s, j, PK.seed, ADRS)",
+    "  end for",
+    "  SIG_FORS ← SIG_FORS ∥ AUTH",
+    "end for",
+    "return SIG_FORS"
+  ]
+}

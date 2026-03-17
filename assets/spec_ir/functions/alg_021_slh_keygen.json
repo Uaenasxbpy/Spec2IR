@@ -1,0 +1,29 @@
+{
+  "function_id": "alg_021_slh_keygen",
+  "name": "slh_keygen()",
+  "label": "Algorithm 21",
+  "page_start": 37,
+  "page_end": 37,
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "SK",
+      "type": "byte_array",
+      "description": "4n-byte SLH-DSA private key"
+    },
+    {
+      "name": "PK",
+      "type": "byte_array",
+      "description": "2n-byte SLH-DSA public key"
+    }
+  ],
+  "body_raw": [
+    "SK.seed ←$ B^n",
+    "SK.prf ←$ B^n",
+    "PK.seed ←$ B^n",
+    "if SK.seed = NULL or SK.prf = NULL or PK.seed = NULL then",
+    "  return ⊥",
+    "end if",
+    "return slh_keygen_internal(SK.seed, SK.prf, PK.seed)"
+  ]
+}
