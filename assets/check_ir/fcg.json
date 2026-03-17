@@ -1,0 +1,959 @@
+{
+  "graph_name": "function_call_graph",
+  "source_document": "FIPS 205 Stateless Hash-Based Digital Signature Standard",
+  "nodes": [
+    {
+      "node_id": "alg_001_gen_len2",
+      "name": "gen_len2(n, lgw)",
+      "label": "Algorithm 1",
+      "page_start": 10,
+      "page_end": 10,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_002_toint",
+      "name": "toInt(X, n)",
+      "label": "Algorithm 2",
+      "page_start": 15,
+      "page_end": 15,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_003_tobyte",
+      "name": "toByte(x, n)",
+      "label": "Algorithm 3",
+      "page_start": 15,
+      "page_end": 15,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_004_base_2b",
+      "name": "base_2b(X, b, out_len)",
+      "label": "Algorithm 4",
+      "page_start": 16,
+      "page_end": 16,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_005_chain",
+      "name": "chain(X, i, s, PK.seed, ADRS)",
+      "label": "Algorithm 5",
+      "page_start": 18,
+      "page_end": 18,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_006_wots_pkgen",
+      "name": "wots_pkGen(SK.seed, PK.seed, ADRS)",
+      "label": "Algorithm 6",
+      "page_start": 18,
+      "page_end": 18,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_007_wots_sign",
+      "name": "wots_sign(M, SK.seed, PK.seed, ADRS)",
+      "label": "Algorithm 7",
+      "page_start": 20,
+      "page_end": 20,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_008_wots_pkfromsig",
+      "name": "wots_pkFromSig(sig, M, PK.seed, ADRS)",
+      "label": "Algorithm 8",
+      "page_start": 21,
+      "page_end": 21,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_009_xmss_node",
+      "name": "xmss_node(SK.seed, i, z, PK.seed, ADRS)",
+      "label": "Algorithm 9",
+      "page_start": 23,
+      "page_end": 23,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_010_xmss_sign",
+      "name": "xmss_sign(M, SK.seed, idx, PK.seed, ADRS)",
+      "label": "Algorithm 10",
+      "page_start": 24,
+      "page_end": 24,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_011_xmss_pkfromsig",
+      "name": "xmss_pkFromSig(idx, SIG_XMSS, M, PK.seed, ADRS)",
+      "label": "Algorithm 11",
+      "page_start": 25,
+      "page_end": 25,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_012_ht_sign",
+      "name": "ht_sign(M, SK.seed, PK.seed, idx_tree, idx_leaf)",
+      "label": "Algorithm 12",
+      "page_start": 27,
+      "page_end": 27,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_013_ht_verify",
+      "name": "ht_verify(M, SIG_HT, PK.seed, idx_tree, idx_leaf, PK.root)",
+      "label": "Algorithm 13",
+      "page_start": 28,
+      "page_end": 28,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_014_fors_skgen",
+      "name": "fors_skGen(SK.seed, PK.seed, ADRS, idx)",
+      "label": "Algorithm 14",
+      "page_start": 29,
+      "page_end": 29,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_015_fors_node",
+      "name": "fors_node(SK.seed, i, z, PK.seed, ADRS)",
+      "label": "Algorithm 15",
+      "page_start": 30,
+      "page_end": 30,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_016_fors_sign",
+      "name": "fors_sign(md, SK.seed, PK.seed, ADRS)",
+      "label": "Algorithm 16",
+      "page_start": 31,
+      "page_end": 31,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_017_fors_pkfromsig",
+      "name": "fors_pkFromSig(SIG_FORS, md, PK.seed, ADRS)",
+      "label": "Algorithm 17",
+      "page_start": 32,
+      "page_end": 32,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_018_slh_keygen_internal",
+      "name": "slh_keygen_internal(SK.seed, SK.prf, PK.seed)",
+      "label": "Algorithm 18",
+      "page_start": 34,
+      "page_end": 34,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_019_slh_sign_internal",
+      "name": "slh_sign_internal(M, SK, addrnd)",
+      "label": "Algorithm 19",
+      "page_start": 35,
+      "page_end": 35,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_020_slh_verify_internal",
+      "name": "slh_verify_internal(M, SIG, PK)",
+      "label": "Algorithm 20",
+      "page_start": 36,
+      "page_end": 36,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_021_slh_keygen",
+      "name": "slh_keygen()",
+      "label": "Algorithm 21",
+      "page_start": 37,
+      "page_end": 37,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_022_slh_sign",
+      "name": "slh_sign(M, ctx, SK)",
+      "label": "Algorithm 22",
+      "page_start": 39,
+      "page_end": 39,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_023_hash_slh_sign",
+      "name": "hash_slh_sign(M, ctx, PH, SK)",
+      "label": "Algorithm 23",
+      "page_start": 40,
+      "page_end": 40,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_024_slh_verify",
+      "name": "slh_verify(M, SIG, ctx, PK)",
+      "label": "Algorithm 24",
+      "page_start": 41,
+      "page_end": 41,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "alg_025_hash_slh_verify",
+      "name": "hash_slh_verify(M, SIG, ctx, PH, PK)",
+      "label": "Algorithm 25",
+      "page_start": 42,
+      "page_end": 42,
+      "node_type": "internal_function"
+    },
+    {
+      "node_id": "ext_prf",
+      "name": "PRF",
+      "label": "Pseudorandom Function",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    },
+    {
+      "node_id": "ext_prfmsg",
+      "name": "PRFmsg",
+      "label": "Message Randomization PRF",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    },
+    {
+      "node_id": "ext_hmsg",
+      "name": "Hmsg",
+      "label": "Message Hash Function",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    },
+    {
+      "node_id": "ext_f",
+      "name": "F",
+      "label": "Single n-byte Hash Function",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    },
+    {
+      "node_id": "ext_h",
+      "name": "H",
+      "label": "2n-byte Hash Function",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    },
+    {
+      "node_id": "ext_tl",
+      "name": "Tlen",
+      "label": "l*n-byte Hash Function",
+      "page_start": 11,
+      "page_end": 11,
+      "node_type": "external_primitive"
+    }
+  ],
+  "edges": [
+    {
+      "source": "alg_004_base_2b",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 14,
+        "text": "𝑖 ← toInt(ADRS[20 ∶ 24], 4)"
+      }
+    },
+    {
+      "source": "alg_004_base_2b",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 14,
+        "text": "𝑖 ← toInt(ADRS[28 ∶ 32], 4)"
+      }
+    },
+    {
+      "source": "alg_005_chain",
+      "target": "ext_f",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 18,
+        "text": "𝑡𝑚𝑝 ← F(PK.seed, ADRS, 𝑡𝑚𝑝)"
+      }
+    },
+    {
+      "source": "alg_006_wots_pkgen",
+      "target": "alg_005_chain",
+      "relation": "calls",
+      "evidence": {
+        "page": 18,
+        "text": "𝑡𝑚𝑝[𝑖] ← chain(𝑠𝑘, 0, 𝑤 − 1, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_006_wots_pkgen",
+      "target": "ext_prf",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 18,
+        "text": "𝑠𝑘 ← PRF(PK.seed, SK.seed, skADRS)"
+      }
+    },
+    {
+      "source": "alg_006_wots_pkgen",
+      "target": "ext_tl",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 18,
+        "text": "𝑝𝑘 ← T𝑙𝑒𝑛(PK.seed, wotspkADRS, 𝑡𝑚𝑝)"
+      }
+    },
+    {
+      "source": "alg_007_wots_sign",
+      "target": "alg_004_base_2b",
+      "relation": "calls",
+      "evidence": {
+        "page": 20,
+        "text": "𝑚𝑠𝑔 ← base_2b(𝑀 , 𝑙𝑔𝑤, 𝑙𝑒𝑛1)"
+      }
+    },
+    {
+      "source": "alg_007_wots_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 20,
+        "text": "base_2b (toByte (𝑐𝑠𝑢𝑚, ⌈𝑙𝑒𝑛2⋅𝑙𝑔𝑤 / 8⌉) , 𝑙𝑔𝑤, 𝑙𝑒𝑛2)"
+      }
+    },
+    {
+      "source": "alg_007_wots_sign",
+      "target": "alg_005_chain",
+      "relation": "calls",
+      "evidence": {
+        "page": 20,
+        "text": "𝑠𝑖𝑔[𝑖] ← chain(𝑠𝑘, 0, 𝑚𝑠𝑔[𝑖], PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_007_wots_sign",
+      "target": "ext_prf",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 20,
+        "text": "𝑠𝑘 ← PRF(PK.seed, SK.seed, skADRS)"
+      }
+    },
+    {
+      "source": "alg_008_wots_pkfromsig",
+      "target": "alg_004_base_2b",
+      "relation": "calls",
+      "evidence": {
+        "page": 21,
+        "text": "𝑚𝑠𝑔 ← base_2b(𝑀 , 𝑙𝑔𝑤, 𝑙𝑒𝑛1)"
+      }
+    },
+    {
+      "source": "alg_008_wots_pkfromsig",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 21,
+        "text": "base_2b (toByte (𝑐𝑠𝑢𝑚, ⌈𝑙𝑒𝑛2⋅𝑙𝑔𝑤 / 8⌉) , 𝑙𝑔𝑤, 𝑙𝑒𝑛2)"
+      }
+    },
+    {
+      "source": "alg_008_wots_pkfromsig",
+      "target": "alg_005_chain",
+      "relation": "calls",
+      "evidence": {
+        "page": 21,
+        "text": "𝑡𝑚𝑝[𝑖] ← chain(𝑠𝑖𝑔[𝑖], 𝑚𝑠𝑔[𝑖], 𝑤 − 1 − 𝑚𝑠𝑔[𝑖], PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_008_wots_pkfromsig",
+      "target": "ext_tl",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 21,
+        "text": "𝑝𝑘𝑠𝑖𝑔 ← T𝑙𝑒𝑛(PK.seed, wotspkADRS, 𝑡𝑚𝑝)"
+      }
+    },
+    {
+      "source": "alg_009_xmss_node",
+      "target": "alg_006_wots_pkgen",
+      "relation": "calls",
+      "evidence": {
+        "page": 23,
+        "text": "𝑛𝑜𝑑𝑒 ← wots_pkGen(SK.seed, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_009_xmss_node",
+      "target": "alg_009_xmss_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 23,
+        "text": "𝑙𝑛𝑜𝑑𝑒 ← xmss_node(SK.seed, 2𝑖, 𝑧 − 1, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_009_xmss_node",
+      "target": "alg_009_xmss_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 23,
+        "text": "𝑟𝑛𝑜𝑑𝑒 ← xmss_node(SK.seed, 2𝑖 + 1, 𝑧 − 1, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_009_xmss_node",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 23,
+        "text": "𝑛𝑜𝑑𝑒 ← H(PK.seed, ADRS, 𝑙𝑛𝑜𝑑𝑒 ∥ 𝑟𝑛𝑜𝑑𝑒)"
+      }
+    },
+    {
+      "source": "alg_010_xmss_sign",
+      "target": "alg_009_xmss_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 24,
+        "text": "AUTH[𝑗] ← xmss_node(SK.seed, 𝑘, 𝑗, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_010_xmss_sign",
+      "target": "alg_007_wots_sign",
+      "relation": "calls",
+      "evidence": {
+        "page": 24,
+        "text": "𝑠𝑖𝑔 ← wots_sign(𝑀 , SK.seed, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_011_xmss_pkfromsig",
+      "name": "alg_011_xmss_pkfromsig",
+      "relation": "calls",
+      "target": "alg_008_wots_pkfromsig",
+      "evidence": {
+        "page": 25,
+        "text": "𝑛𝑜𝑑𝑒[0] ← wots_pkFromSig(𝑠𝑖𝑔, 𝑀 , PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_011_xmss_pkfromsig",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 25,
+        "text": "𝑛𝑜𝑑𝑒[1] ← H(PK.seed, ADRS, 𝑛𝑜𝑑𝑒[0] ∥ AUTH[𝑘])"
+      }
+    },
+    {
+      "source": "alg_011_xmss_pkfromsig",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 25,
+        "text": "𝑛𝑜𝑑𝑒[1] ← H(PK.seed, ADRS, AUTH[𝑘] ∥ 𝑛𝑜𝑑𝑒[0])"
+      }
+    },
+    {
+      "source": "alg_012_ht_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 27,
+        "text": "ADRS ← toByte(0, 32)"
+      }
+    },
+    {
+      "source": "alg_012_ht_sign",
+      "target": "alg_010_xmss_sign",
+      "relation": "calls",
+      "evidence": {
+        "page": 27,
+        "text": "SIG𝑡𝑚𝑝 ← xmss_sign(𝑀 , SK.seed, 𝑖𝑑𝑥𝑙𝑒𝑎𝑓, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_012_ht_sign",
+      "target": "alg_010_xmss_sign",
+      "relation": "calls",
+      "evidence": {
+        "page": 27,
+        "text": "SIG𝑡𝑚𝑝 ← xmss_sign(𝑟𝑜𝑜𝑡, SK.seed, 𝑖𝑑𝑥𝑙𝑒𝑎𝑓, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_012_ht_sign",
+      "target": "alg_011_xmss_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 27,
+        "text": "𝑟𝑜𝑜𝑡 ← xmss_pkFromSig(𝑖𝑑𝑥𝑙𝑒𝑎𝑓, SIG𝑡𝑚𝑝, 𝑀 , PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_012_ht_sign",
+      "target": "alg_011_xmss_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 27,
+        "text": "𝑟𝑜𝑜𝑡 ← xmss_pkFromSig(𝑖𝑑𝑥𝑙𝑒𝑎𝑓, SIG𝑡𝑚𝑝, 𝑟𝑜𝑜𝑡, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_013_ht_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 28,
+        "text": "ADRS ← toByte(0, 32)"
+      }
+    },
+    {
+      "source": "alg_013_ht_verify",
+      "target": "alg_011_xmss_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 28,
+        "text": "𝑛𝑜𝑑𝑒 ← xmss_pkFromSig(𝑖𝑑𝑥𝑙𝑒𝑎𝑓, SIG𝑡𝑚𝑝, 𝑀 , PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_013_ht_verify",
+      "target": "alg_011_xmss_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 28,
+        "text": "𝑛𝑜𝑑𝑒 ← xmss_pkFromSig(𝑖𝑑𝑥𝑙𝑒𝑎𝑓, SIG𝑡𝑚𝑝, 𝑛𝑜𝑑𝑒, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_014_fors_skgen",
+      "target": "ext_prf",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 29,
+        "text": "return PRF(PK.seed, SK.seed, skADRS)"
+      }
+    },
+    {
+      "source": "alg_015_fors_node",
+      "target": "alg_014_fors_skgen",
+      "relation": "calls",
+      "evidence": {
+        "page": 30,
+        "text": "𝑠𝑘 ← fors_skGen(SK.seed, PK.seed, ADRS, 𝑖)"
+      }
+    },
+    {
+      "source": "alg_015_fors_node",
+      "target": "alg_015_fors_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 30,
+        "text": "𝑙𝑛𝑜𝑑𝑒 ← fors_node(SK.seed, 2𝑖, 𝑧 − 1, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_015_fors_node",
+      "target": "alg_015_fors_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 30,
+        "text": "𝑟𝑛𝑜𝑑𝑒 ← fors_node(SK.seed, 2𝑖 + 1, 𝑧 − 1, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_015_fors_node",
+      "target": "ext_f",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 30,
+        "text": "𝑛𝑜𝑑𝑒 ← F(PK.seed, ADRS, 𝑠𝑘)"
+      }
+    },
+    {
+      "source": "alg_015_fors_node",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 30,
+        "text": "𝑛𝑜𝑑𝑒 ← H(PK.seed, ADRS, 𝑙𝑛𝑜𝑑𝑒 ∥ 𝑟𝑛𝑜𝑑𝑒)"
+      }
+    },
+    {
+      "source": "alg_016_fors_sign",
+      "target": "alg_004_base_2b",
+      "relation": "calls",
+      "evidence": {
+        "page": 31,
+        "text": "𝑖𝑛𝑑𝑖𝑐𝑒𝑠 ← base_2b(𝑚𝑑, 𝑎, 𝑘)"
+      }
+    },
+    {
+      "source": "alg_016_fors_sign",
+      "target": "alg_014_fors_skgen",
+      "relation": "calls",
+      "evidence": {
+        "page": 31,
+        "text": "SIG𝐹 𝑂𝑅𝑆 ← SIG𝐹 𝑂𝑅𝑆 ∥ fors_skGen(SK.seed, PK.seed, ADRS, 𝑖 ⋅ 2𝑎 + 𝑖𝑛𝑑𝑖𝑐𝑒𝑠[𝑖])"
+      }
+    },
+    {
+      "source": "alg_016_fors_sign",
+      "target": "alg_015_fors_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 31,
+        "text": "AUTH[𝑗] ← fors_node(SK.seed, 𝑖 ⋅ 2𝑎−𝑗 + 𝑠, 𝑗, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_017_fors_pkfromsig",
+      "target": "alg_004_base_2b",
+      "relation": "calls",
+      "evidence": {
+        "page": 32,
+        "text": "𝑖𝑛𝑑𝑖𝑐𝑒𝑠 ← base_2b(𝑚𝑑, 𝑎, 𝑘)"
+      }
+    },
+    {
+      "source": "alg_017_fors_pkfromsig",
+      "target": "ext_f",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 32,
+        "text": "𝑛𝑜𝑑𝑒[0] ← F(PK.seed, ADRS, 𝑠𝑘)"
+      }
+    },
+    {
+      "source": "alg_017_fors_pkfromsig",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 32,
+        "text": "𝑛𝑜𝑑𝑒[1] ← H(PK.seed, ADRS, 𝑛𝑜𝑑𝑒[0] ∥ 𝑎𝑢𝑡ℎ[𝑗])"
+      }
+    },
+    {
+      "source": "alg_017_fors_pkfromsig",
+      "target": "ext_h",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 32,
+        "text": "𝑛𝑜𝑑𝑒[1] ← H(PK.seed, ADRS, 𝑎𝑢𝑡ℎ[𝑗] ∥ 𝑛𝑜𝑑𝑒[0])"
+      }
+    },
+    {
+      "source": "alg_017_fors_pkfromsig",
+      "target": "ext_tl",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 32,
+        "text": "𝑝𝑘 ← T𝑘(PK.seed, forspkADRS, 𝑟𝑜𝑜𝑡)"
+      }
+    },
+    {
+      "source": "alg_018_slh_keygen_internal",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 34,
+        "text": "ADRS ← toByte(0, 32)"
+      }
+    },
+    {
+      "source": "alg_018_slh_keygen_internal",
+      "target": "alg_009_xmss_node",
+      "relation": "calls",
+      "evidence": {
+        "page": 34,
+        "text": "PK.root ← xmss_node(SK.seed, 0, ℎ′, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "ADRS ← toByte(0, 32)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "𝑖𝑑𝑥𝑡𝑟𝑒𝑒 ← toInt (𝑡𝑚𝑝_𝑖𝑑𝑥𝑡𝑟𝑒𝑒, ⌈ (ℎ−ℎ/𝑑)/8⌉)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "𝑖𝑑𝑥𝑙𝑒𝑎𝑓 ← toInt (𝑡𝑚𝑝_𝑖𝑑𝑥𝑙𝑒𝑎𝑓, ⌈ (ℎ/𝑑)/8⌉)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_016_fors_sign",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "SIG𝐹 𝑂𝑅𝑆 ← fors_sign(𝑚𝑑, SK.seed, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_017_fors_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "PK𝐹 𝑂𝑅𝑆 ← fors_pkFromSig(SIG𝐹 𝑂𝑅𝑆, 𝑚𝑑, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "alg_012_ht_sign",
+      "relation": "calls",
+      "evidence": {
+        "page": 35,
+        "text": "SIG𝐻𝑇 ← ht_sign(PK𝐹 𝑂𝑅𝑆, SK.seed, PK.seed, 𝑖𝑑𝑥𝑡𝑟𝑒𝑒, 𝑖𝑑𝑥𝑙𝑒𝑎𝑓)"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "ext_prfmsg",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 35,
+        "text": "𝑅 ← PRF𝑚𝑠𝑔(SK.prf, 𝑜𝑝𝑡_𝑟𝑎𝑛𝑑, 𝑀 )"
+      }
+    },
+    {
+      "source": "alg_019_slh_sign_internal",
+      "target": "ext_hmsg",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 35,
+        "text": "𝑑𝑖𝑔𝑒𝑠𝑡 ← H𝑚𝑠𝑔(𝑅, PK.seed, PK.root, 𝑀 )"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 36,
+        "text": "ADRS ← toByte(0, 32)"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 36,
+        "text": "𝑖𝑑𝑥𝑡𝑟𝑒𝑒 ← toInt (𝑡𝑚𝑝_𝑖𝑑𝑥𝑡𝑟𝑒𝑒, ⌈ (ℎ−ℎ/𝑑)/8⌉)"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "alg_002_toint",
+      "relation": "calls",
+      "evidence": {
+        "page": 36,
+        "text": "𝑖𝑑𝑥𝑙𝑒𝑎𝑓 ← toInt (𝑡𝑚𝑝_𝑖𝑑𝑥𝑙𝑒𝑎𝑓, ⌈ (ℎ/𝑑)/8⌉)"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "alg_017_fors_pkfromsig",
+      "relation": "calls",
+      "evidence": {
+        "page": 36,
+        "text": "PK𝐹 𝑂𝑅𝑆 ← fors_pkFromSig(SIG𝐹 𝑂𝑅𝑆, 𝑚𝑑, PK.seed, ADRS)"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "alg_013_ht_verify",
+      "relation": "calls",
+      "evidence": {
+        "page": 36,
+        "text": "return ht_verify(PK𝐹 𝑂𝑅𝑆, SIG𝐻𝑇 , PK.seed, 𝑖𝑑𝑥𝑡𝑟𝑒𝑒, 𝑖𝑑𝑥𝑙𝑒𝑎𝑓, PK.root)"
+      }
+    },
+    {
+      "source": "alg_020_slh_verify_internal",
+      "target": "ext_hmsg",
+      "relation": "uses_primitive",
+      "evidence": {
+        "page": 36,
+        "text": "𝑑𝑖𝑔𝑒𝑠𝑡 ← H𝑚𝑠𝑔(𝑅, PK.seed, PK.root, 𝑀 )"
+      }
+    },
+    {
+      "source": "alg_021_slh_keygen",
+      "target": "alg_018_slh_keygen_internal",
+      "relation": "calls",
+      "evidence": {
+        "page": 37,
+        "text": "return slh_keygen_internal(SK.seed, SK.prf, PK.seed)"
+      }
+    },
+    {
+      "source": "alg_022_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 39,
+        "text": "𝑀 ′ ← toByte(0, 1) ∥ toByte(|𝑐𝑡𝑥|, 1) ∥ 𝑐𝑡𝑥 ∥ 𝑀"
+      }
+    },
+    {
+      "source": "alg_022_slh_sign",
+      "target": "alg_019_slh_sign_internal",
+      "relation": "calls",
+      "evidence": {
+        "page": 39,
+        "text": "SIG ← slh_sign_internal(𝑀 ′ , SK, 𝑎𝑑𝑑𝑟𝑛𝑑)"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "OID ← toByte(0x0609608648016503040201, 11)"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "OID ← toByte(0x0609608648016503040203, 11)"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "OID ← toByte(0x060960864801650304020B, 11)"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "OID ← toByte(0x060960864801650304020C, 11)"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "𝑀 ′ ← toByte(1, 1) ∥ toByte(|𝑐𝑡𝑥|, 1) ∥ 𝑐𝑡𝑥 ∥ OID ∥ PH𝑀"
+      }
+    },
+    {
+      "source": "alg_023_hash_slh_sign",
+      "target": "alg_019_slh_sign_internal",
+      "relation": "calls",
+      "evidence": {
+        "page": 40,
+        "text": "SIG ← slh_sign_internal(𝑀 ′, SK, 𝑎𝑑𝑑𝑟𝑛𝑑)"
+      }
+    },
+    {
+      "source": "alg_024_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 41,
+        "text": "𝑀 ′ ← toByte(0, 1) ∥ toByte(|𝑐𝑡𝑥|, 1) ∥ 𝑐𝑡𝑥 ∥ 𝑀"
+      }
+    },
+    {
+      "source": "alg_024_slh_verify",
+      "target": "alg_020_slh_verify_internal",
+      "relation": "calls",
+      "evidence": {
+        "page": 41,
+        "text": "return slh_verify_internal(𝑀 ′, SIG, PK)"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "OID ← toByte(0x0609608648016503040201, 11)"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "OID ← toByte(0x0609608648016503040203, 11)"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "OID ← toByte(0x060960864801650304020B, 11)"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "OID ← toByte(0x060960864801650304020C, 11)"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_003_tobyte",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "𝑀 ′ ← toByte(1, 1) ∥ toByte(|𝑐𝑡𝑥|, 1) ∥ 𝑐𝑡𝑥 ∥ OID ∥ PH𝑀"
+      }
+    },
+    {
+      "source": "alg_025_hash_slh_verify",
+      "target": "alg_020_slh_verify_internal",
+      "relation": "calls",
+      "evidence": {
+        "page": 42,
+        "text": "return slh_verify_internal(𝑀 ′, SIG, PK)"
+      }
+    }
+  ]
+}
