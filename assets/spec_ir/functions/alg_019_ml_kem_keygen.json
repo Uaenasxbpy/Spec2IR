@@ -1,0 +1,29 @@
+{
+  "function_id": "alg_019_ml_kem_keygen",
+  "name": "ML-KEM.KeyGen",
+  "label": "Algorithm 19",
+  "page_start": 35,
+  "page_end": 35,
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "ek",
+      "type": "byte_array",
+      "description": "384*k + 32-byte encapsulation key, or ⊥ on randomness failure"
+    },
+    {
+      "name": "dk",
+      "type": "byte_array",
+      "description": "768*k + 96-byte decapsulation key, or ⊥ on randomness failure"
+    }
+  ],
+  "body_raw": [
+    "d <-$ B^32",
+    "z <-$ B^32",
+    "if d == NULL or z == NULL then",
+    "  return ⊥",
+    "end if",
+    "(ek, dk) <- ML-KEM.KeyGen_internal(d, z)",
+    "return (ek, dk)"
+  ]
+}

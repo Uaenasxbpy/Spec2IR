@@ -1,638 +1,107 @@
 {
   "parameter_sets": [
     {
-      "set_name": "SLH-DSA-SHA2-128s",
+      "set_name": "ML-KEM-512",
       "parameters": [
-        {
-          "name": "n",
-          "value": 16,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 63,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 7,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 9,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 12,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
         {
           "name": "k",
-          "value": 14,
+          "value": 2,
           "type": "int",
-          "description": "Number of FORS trees"
+          "description": "Module dimension, determines the size of the matrix A and vectors s, e, y, e1"
         },
         {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 30,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHAKE-128s",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 16,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 63,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 7,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 9,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 12,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 14,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 30,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHA2-128f",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 16,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 66,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 22,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
+          "name": "eta1",
           "value": 3,
           "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
+          "description": "Centered binomial distribution parameter for sampling s, e in K-PKE.KeyGen and y in K-PKE.Encrypt"
         },
         {
-          "name": "a",
-          "value": 6,
+          "name": "eta2",
+          "value": 2,
           "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
+          "description": "Centered binomial distribution parameter for sampling e1 and e2 in K-PKE.Encrypt"
         },
         {
-          "name": "k",
-          "value": 33,
+          "name": "du",
+          "value": 10,
           "type": "int",
-          "description": "Number of FORS trees"
+          "description": "Compression and encoding parameter for the u component of the ciphertext"
         },
         {
-          "name": "lgw",
+          "name": "dv",
           "value": 4,
           "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 34,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
+          "description": "Compression and encoding parameter for the v component of the ciphertext"
         }
       ]
     },
     {
-      "set_name": "SLH-DSA-SHAKE-128f",
+      "set_name": "ML-KEM-768",
       "parameters": [
         {
-          "name": "n",
-          "value": 16,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 66,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 22,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
+          "name": "k",
           "value": 3,
           "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
+          "description": "Module dimension, determines the size of the matrix A and vectors s, e, y, e1"
         },
         {
-          "name": "a",
-          "value": 6,
+          "name": "eta1",
+          "value": 2,
           "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
+          "description": "Centered binomial distribution parameter for sampling s, e in K-PKE.KeyGen and y in K-PKE.Encrypt"
         },
         {
-          "name": "k",
-          "value": 33,
+          "name": "eta2",
+          "value": 2,
           "type": "int",
-          "description": "Number of FORS trees"
+          "description": "Centered binomial distribution parameter for sampling e1 and e2 in K-PKE.Encrypt"
         },
         {
-          "name": "lgw",
+          "name": "du",
+          "value": 10,
+          "type": "int",
+          "description": "Compression and encoding parameter for the u component of the ciphertext"
+        },
+        {
+          "name": "dv",
           "value": 4,
           "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 34,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
+          "description": "Compression and encoding parameter for the v component of the ciphertext"
         }
       ]
     },
     {
-      "set_name": "SLH-DSA-SHA2-192s",
+      "set_name": "ML-KEM-1024",
       "parameters": [
         {
-          "name": "n",
-          "value": 24,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 63,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 7,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 9,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 14,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
           "name": "k",
-          "value": 17,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
           "value": 4,
           "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
+          "description": "Module dimension, determines the size of the matrix A and vectors s, e, y, e1"
         },
         {
-          "name": "m",
-          "value": 39,
+          "name": "eta1",
+          "value": 2,
           "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHAKE-192s",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 24,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
+          "description": "Centered binomial distribution parameter for sampling s, e in K-PKE.KeyGen and y in K-PKE.Encrypt"
         },
         {
-          "name": "h",
-          "value": 63,
+          "name": "eta2",
+          "value": 2,
           "type": "int",
-          "description": "Total height of the hypertree"
+          "description": "Centered binomial distribution parameter for sampling e1 and e2 in K-PKE.Encrypt"
         },
         {
-          "name": "d",
-          "value": 7,
+          "name": "du",
+          "value": 11,
           "type": "int",
-          "description": "Number of layers in the hypertree"
+          "description": "Compression and encoding parameter for the u component of the ciphertext"
         },
         {
-          "name": "h_prime",
-          "value": 9,
+          "name": "dv",
+          "value": 5,
           "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 14,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 17,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 39,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHA2-192f",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 24,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 66,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 22,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 3,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 8,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 33,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 42,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHAKE-192f",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 24,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 66,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 22,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 3,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 8,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 33,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 42,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHA2-256s",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 32,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 64,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 8,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 8,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 14,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 22,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 47,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHAKE-256s",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 32,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 64,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 8,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 8,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 14,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 22,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 47,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHA2-256f",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 32,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 68,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 17,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 4,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 9,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 35,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 49,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
-        }
-      ]
-    },
-    {
-      "set_name": "SLH-DSA-SHAKE-256f",
-      "parameters": [
-        {
-          "name": "n",
-          "value": 32,
-          "type": "int",
-          "description": "Security parameter, length of hash outputs and seeds in bytes"
-        },
-        {
-          "name": "h",
-          "value": 68,
-          "type": "int",
-          "description": "Total height of the hypertree"
-        },
-        {
-          "name": "d",
-          "value": 17,
-          "type": "int",
-          "description": "Number of layers in the hypertree"
-        },
-        {
-          "name": "h_prime",
-          "value": 4,
-          "type": "int",
-          "description": "Height of each individual XMSS tree in the hypertree"
-        },
-        {
-          "name": "a",
-          "value": 9,
-          "type": "int",
-          "description": "Height of each FORS tree, each FORS tree has 2^a leaves"
-        },
-        {
-          "name": "k",
-          "value": 35,
-          "type": "int",
-          "description": "Number of FORS trees"
-        },
-        {
-          "name": "lgw",
-          "value": 4,
-          "type": "int",
-          "description": "Base-2 logarithm of the Winternitz parameter w for WOTS+"
-        },
-        {
-          "name": "m",
-          "value": 49,
-          "type": "int",
-          "description": "Length of the message digest in bytes"
+          "description": "Compression and encoding parameter for the v component of the ciphertext"
         }
       ]
     }

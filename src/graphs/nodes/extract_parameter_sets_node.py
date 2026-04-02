@@ -1,7 +1,6 @@
 import os
 import json
 from jinja2 import Template
-from coze_coding_dev_sdk import LLMClient
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.runtime import Runtime
@@ -15,6 +14,8 @@ def extract_parameter_sets_node(state: ExtractParameterSetsInput, config: Runnab
     desc: 从文档内容中提取parameter_sets.json
     integrations: 大语言模型
     """
+    from coze_coding_dev_sdk import LLMClient  # type: ignore
+    
     ctx = runtime.context
     
     # 读取配置文件

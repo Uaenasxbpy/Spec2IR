@@ -1,9 +1,9 @@
 {
   "document_info": {
-    "standard": "FIPS 205",
-    "full_title": "Stateless Hash-Based Digital Signature Standard",
+    "standard": "FIPS 203",
+    "full_title": "Module-Lattice-Based Key-Encapsulation Mechanism Standard",
     "publisher": "National Institute of Standards and Technology",
     "publication_date": "2024-08-13",
-    "core_algorithm": "SLH-DSA"
+    "core_algorithm": "ML-KEM"
   }
 }
